@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Event Details</title>
+    <link rel="stylesheet" type = "text/css" href="/assets/stylesheets/commonStyle.css">
+    <link rel="stylesheet" type = "text/css" href="/assets/stylesheets/connectionStyle.css">
+  </head>
+
+  <body>
+    <% include partial/header.ejs %>
+    <% include partial/nav.ejs %>
+
+  <main class = "mainConnection">
+      <section>
+          <header>
+            <h3 class="eventName"><%= data.eventName %></h3>
+          </header>
+            <div class="flex-container5">
+                <div><img src="<%= data.eventImage %>" alt="" class="styer" ></div>
+                <div>
+                  <p>Hosted by: <%= data.host %></p>
+                  <p>Date & Time: <%= data.dateTime %></p>
+                  <p>Location: <%= data.location %></p>
+              </div>
+              <div>
+            </div>
+            <div>
+              <p>Are you going? <br>10 people are going</p>
+			  
+			  <form method="get" action="/myEvents" >
+                  <input type="hidden" name="eventId" value="<%= data.eventId %>"/>
+                  <input type="hidden" name="action" value="yes"/>
+                  <button  class="yes">Yes</a></p>
+              </form>
+              <form method="get" action="/myEvents" >
+                  <input type="hidden" name="eventId" value="<%= data.eventId %>"/>
+                  <input type="hidden" name="action" value="no"/>
+                  <button  class="no">No</a></p>
+              </form>
+              <form method="get" action="/myEvents">
+                  <input type="hidden" name="eventId" value="<%= data.eventId %>"/>
+                  <input type="hidden" name="action" value="maybe"/>
+                  <button class="maybe">Maybe</a></p>
+              </form>
+			  
+			  
+              </form>
+          </div>
+          <div></div></div>
+      </section>
+
+      <section>
+        <article>
+          <header>
+            <h3 class="eventName">Details</h3>
+          </header>
+          <p class="eventDetails"><%= data.details %></p>
+        </article>
+      </section>
+    </main>
+
+    <% include partial/footer.ejs %>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<header>
+    <div class="flex-container">
+      <a href="/"><img src="/assets/images/Logo.png" alt="CEHLogo" class="left"></a>	  
+	  
+	  <% if (user_loggedIn == null) {%>
+      <div class="right">
+        <form method="get" action="/login" id="user_loggedIn_form">
+            <a href="javascript:{}" class="right" onclick="document.getElementById('user_loggedIn_form').submit();">Login</a>
+        </form>
+      </div>
+      <div class="right">
+        <form method="get" action="/login" id="signup_form">
+            <a href="javascript:{}" class="right" onclick="document.getElementById('signup_form').submit();">Sign up</a>
+        </form>
+      </div>
+
+        <%  }
+        else { %>
+		
+		<div class="right">
+        <form method="get" action="/newConnection" id="newEvent_form">
+            <a href="javascript:{}"  onclick="document.getElementById('newEvent_form').submit();">List an Event</a>
+        </form>
+      </div>
+      <div class="right">
+
+        <form method="get" action="/login" id="myconnection_form">
+            <a href="javascript:{}" class="right" onclick="document.getElementById('myconnection_form').submit();">My Events</a>
+        </form>
+
+      </div>
+
+      <div class="right">
+        <form method="get" action="/signOut" id="signout_form">
+            <a href="javascript:{}" class="right" onclick="document.getElementById('signout_form').submit();">Sign Out</a>
+        </form>
+      </div>
+
+        <%  } %>
+	  
+    </div>
+</header>

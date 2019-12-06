@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>List an Event</title>
+    <link rel="stylesheet" type = "text/css" href="/assets/stylesheets/commonStyle.css">
+    <link rel="stylesheet" type = "text/css" href="/assets/stylesheets/newConnectionStyle.css">
+  </head>
+  <body>
+    <% include partial/header.ejs %>
+    <% include partial/nav.ejs %>
+    <main>
+      <div class="welcomeUser">
+        <p> Welcome Norm </p>
+      </div>
+
+      <form method = "post" class="newConnectionForm" action="/connections" >
+        <label>Event Type</label>
+        <input type="text" name="Event_Type" placeholder="Event Type"><br/>
+        <label>Event Name</label>
+        <input type="text" name="Event_Name" placeholder="Event Name"><br/>
+        <label>Details</label>
+        <input type="text" name = "Details" placeholder="Details"><br/>
+        <label>Address</label>
+        <input type="text" name="Address" placeholder="Address"><br/>
+        <label>Date</label>
+        <input type="text" name="Date" placeholder="Date"><br/>
+        <br>
+        <button type="submit" class="yes">Create Event</button>
+      </form>
+
+    </main>
+    <% include partial/footer.ejs %>
+
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Charlotte Event Hub</title>
+    <link rel="stylesheet" type = "text/css" href="/assets/stylesheets/commonStyle.css">
+    <link rel="stylesheet" type = "text/css" href="/assets/stylesheets/connectionsStyle.css">
+  </head>
+
+  <body>
+    <% include partial/header.ejs %>
+    <% include partial/nav.ejs %>
+
+    <main>
+      <div class="flex-container3">
+		
+      <div>
+      <% for(var i=0; i< data.categories.length; i++){ %>
+      <section class="sectionConnections">
+        <h3 class="h31"><%= data.categories[i] %></h3>
+        <% for(var j=0; j< data.events.length;j++){ %>
+                  <%  if(data.categories[i] == data.events[j].eventType){ %>
+        <ul>
+          <li class="list1"><a href="/connections/<%= data.events[j].eventId %>"><%= data.events[j].eventName %></a></li>
+        </ul>
+        <% } %>
+    <% } %>
+      </section>
+      <% } %>
+      </div>
+      <div>
+        <img src="/assets/images/charlotteskyline-night-1920x908.jpg" alt="charlotte" class="photo">
+      </div>
+      </div>
+
+  </main>
+
+  <% include partial/footer.ejs %>
+
+
+
+  </body>
+</html>

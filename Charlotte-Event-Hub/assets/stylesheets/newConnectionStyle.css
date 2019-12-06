@@ -1,0 +1,20 @@
+.yes {
+  width: 100px;
+  height: 30px;
+  background-color: green;
+  font-weight: bold; color: white;
+}
+
+label{
+  padding: 10px 10px 10px 0;
+  display: inline-block;
+}
+
+input[type=text],textarea{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid black;
+  border-radius: 1px;
+  box-sizing: border-box;
+
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Personal Event Details</title>
+    <link rel="stylesheet" type = "text/css" href="/assets/stylesheets/commonStyle.css">
+    <link rel="stylesheet" type = "text/css" href="/assets/stylesheets/savedConnectionsStyle.css">
+  </head>
+
+  <body>
+    <% include partial/header.ejs %>
+    <% include partial/nav.ejs %>
+    <main>
+      <div class="welcomeUser">
+        <p> Welcome Norm </p>
+      </div>
+      <section>
+        <div>
+        <h3>Norm's Events</h3>
+        </div>
+		<% if (user_loggedIn == null){ %>
+        <table>
+          <tr>
+            <th>Event</th>
+            <th>Category</th>
+            <th>Attending?</th>
+            <th>Changed your mind?</th>
+          </tr>
+          <tr>
+            <td>Smokin' Cue - APA 9-ball Tournament</td>
+            <td>Recreation Events</td>
+            <td>Yes</td>
+            <td>
+              <form action="/connections/500">
+              <button type="submit" class="update">Update</button>
+              </form>
+              <form action="/savedConnections">
+              <button type="submit" class="delete">Delete</button>
+              </form>
+            </td>
+          </tr>
+          <tr>
+            <td>Hudson's Hero at Carolinas Aviation Museum</td>
+            <td>Informative Events</td>
+            <td>May be</td>
+            <td>
+              <form action="/connections/504">
+              <button type="submit" class="update">Update</button>
+              </form>
+              <form action="/savedConnections">
+              <button type="submit" class="delete">Delete</button>
+              </form>
+            </td>
+          </tr>
+        </table>
+		<% }
+		else{ %>
+		<table>
+		  <tr>
+            <th>Event</th>
+            <th>Category</th>
+            <th>Attending?</th>
+            <th>Changed your mind?</th>
+          </tr>
+		  <% for(let i=0; i < userEvents.length ; i++) { %>
+		  <tr>
+			<td><%= userEvents[i].event.eventName %></td>
+			<td><%= userEvents[i].event.eventType %></td>
+			<td><%= userEvents[i].rsvp %></td>
+			
+		<% 
+			let eventList=[];
+			for(let j=0;j< userEvents.length; j++)
+			{
+			 eventList.push(userEvents[j].event.eventId);
+			}
+		%>
+		
+		<td>
+      <form method="get" action="/connections/<%= userEvents[i].event.eventId %>">
+            <button class="update">Update</button></p>
+
+      </form>
+
+        <form method="get" action="/myEvents/delete/<%= userEvents[i].event.eventId %>">
+          <button  class="delete">Delete</button></p>
+        </form>
+
+    </td>	
+
+		  <% } %>
+		  </tr>
+		
+		</table>
+		<% } %>
+      </section>
+    </main>
+
+    <% include partial/footer.ejs %>
+</html>

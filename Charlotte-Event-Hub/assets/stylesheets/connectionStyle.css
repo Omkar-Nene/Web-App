@@ -1,0 +1,58 @@
+.mainConnection{
+  margin-top: -60px;
+}
+
+.eventName {
+  margin-left: 90px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  font-size: 35px;
+
+  color: #4b4d63;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  font-size: 1.875rem;
+}
+
+.eventDetails {
+  margin-left: 90px;
+  font-size: 20px;
+}
+
+.flex-container5 {
+  display: flex;
+  justify-content: right;
+  margin-left: 100px;
+  margin-top: 30px;
+}
+
+.flex-container5 > div {
+  /* background-color: #f1f1f1; */
+  width: 100%;
+  margin: 20px;
+  font-size: 20px;
+
+}
+
+.styer {
+  width: 300px;
+  height: 300px;
+}
+
+.yes {
+  background-color: Green;
+  color: Black;
+  padding: 2px 6px 2px 6px;
+}
+
+.no {
+  background-color: Red;
+  color: Black;
+  padding: 2px 6px 2px 6px;
+}
+
+.maybe {
+  background-color: Blue;
+  color: Black;
+  padding: 2px 6px 2px 6px;
+}
